@@ -4,12 +4,39 @@
         <meta charset="utf-8">
         <title>D3 Test</title>
         <script type="text/javascript" src="https://d3js.org/d3.v4.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript" src="scripts/BarChart.js"></script>
+        <script type="text/javascript" src="scripts/SvgShapes.js"></script>
         <link rel="stylesheet" type="text/css" href="d3teststyles.css">
     </head>
-    <style type="text/css">
+    <body>     
+        <header>
+            <h1 class="home-title">D3 Playground</h1>
+        </header>
+        <div id="barchart" class="charttype-button">
+            Bar Chart
+        </div>
+        <div id="svgshapes" class="charttype-button">
+            Svg Shapes
+        </div>
+        <div id="chartarea">
+        </div>
+        <script>
+            $( "#barchart" ).click(function() {
+               DrawBarChart();
+               $(".bar").show();
+               $(".svg-item").hide();
+            });
 
-    </style>
-    <body>
-        <script type="text/javascript" src="scripts/BarChart.js"></script>
+            $("#svgshapes").click(function() {
+                $(".bar").hide();
+                if ($(".svg-item").length){
+                    $(".svg-item").show();
+                }
+                else{
+                    DrawSvgShapes();
+                }
+            });
+        </script>
     </body>
 </html>   
