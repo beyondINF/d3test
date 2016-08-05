@@ -1,0 +1,17 @@
+var dataSet = [];                        //Initialize empty array
+for (var i = 0; i < 25; i++) {           //Loop 25 times
+    var newNumber = Math.random() * 50;  //New random number (0-30)
+    dataSet.push(newNumber);             //Add new number to array
+}
+
+console.log(dataSet)
+d3.select("body")
+    .selectAll("div")
+    .data(dataSet)
+    .enter()
+    .append("div")
+    .attr("class", "bar")
+    .style("height", function (d) {
+        var barHeight = d * 5;
+        return barHeight + "px";
+    })

@@ -4,36 +4,12 @@
         <meta charset="utf-8">
         <title>D3 Test</title>
         <script type="text/javascript" src="https://d3js.org/d3.v4.js"></script>
+        <link rel="stylesheet" type="text/css" href="d3teststyles.css">
     </head>
     <style type="text/css">
-    div.bar {
-    display: inline-block;
-    width: 20px;
-    height: 75px;   /* We'll override this later */
-    background-color: teal;
-    margin-right: 2px;
-    }
+
     </style>
     <body>
-        <script type="text/javascript">
-           //var dataSet = [ 5, 10, 15, 20, 25, 14, 11, 22, 29, 11, 13];
-            var dataSet = [];                        //Initialize empty array
-            for (var i = 0; i < 25; i++) {           //Loop 25 times
-                var newNumber = Math.random()*50;  //New random number (0-30)
-                dataSet.push(newNumber);             //Add new number to array
-            }
-
-            console.log(dataSet)
-            d3.select("body")
-            .selectAll("div")
-            .data(dataSet)
-            .enter()
-            .append("div")
-            .attr("class", "bar")
-            .style("height", function(d){
-                var barHeight = d*5;
-                return barHeight + "px";
-            })
-        </script>
+        <script type="text/javascript" src="scripts/BarChart.js"></script>
     </body>
 </html>   
