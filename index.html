@@ -5,18 +5,23 @@
         <title>D3 Test</title>
         <script type="text/javascript" src="https://d3js.org/d3.v4.js"></script>
     </head>
+    <style type="text/css">
+    div.bar {
+    display: inline-block;
+    width: 20px;
+    height: 75px;   /* We'll override this later */
+    background-color: teal;
+    }
+    </style>
     <body>
         <script type="text/javascript">
             var dataSet = [ 5, 10, 15, 20, 25];
             d3.select("body")
-            .selectAll("p")
+            .selectAll("div")
             .data(dataSet)
             .enter()
-            .append("p")
-            .text( function(d) { 
-                return d;
-            })
-            .style("color", "red");
+            .append("div")
+            .attr("class", "bar");
         </script>
     </body>
 </html>   
