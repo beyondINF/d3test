@@ -1,6 +1,6 @@
 function DrawBarChart() {
     var dataSet = [];                        
-    for (var i = 0; i < 50; i++) {           
+    for (var i = 0; i < 75; i++) {           
         var newNumber = Math.random() * 50;
         dataSet.push(newNumber);             
     }
